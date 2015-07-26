@@ -5,6 +5,8 @@ date: "Saturday, July 25, 2015"
 output: pdf_document
 ---
 
+### I. OVERVIEW
+
 Synopsis:
 This project investigates the exponential distribution in R and compare it with the Central Limit Theorem. The exponential distribution is simulated with rexp(n, lambda) where lambda is the rate parameter, theoretical mean of exponential distribution is 1/lambda and theoretical standard deviation is also 1/lambda. This project performs a thousand simulations to get the distribution of averages of 40 exponentials, where the lambda is set to 0.2 for all of the simulations. The simulated samples are used to illustrate and explain the following properties of the distribution of the mean of 40 exponentials (a) Relationship between simulated sample mean with theoretical mean (b) Relationship between simulated sample variance with theoretical variance and (c) Distribution is approximately normal.
 
@@ -21,8 +23,10 @@ set.seed(12345)
 ```
 
 
-1. Show the sample mean and compare it to the theoretical mean of the distribution.
 
+### II. SIMULATION
+
+The simulation can be built in R using the rexp(n,l) function, where n is the number of exponentials per set, and l, or lambda is the rate (a constant of these purposes of 0.2).
 
 ```{r}
 # Number of simulations
@@ -38,7 +42,7 @@ lambda <- 0.2
 # create a dataset containing all samples
 data <- rexp(nosim*nsam, lambda)
 
-# store it as 1000 simulations in a matrix
+# store it as simulations of thousands(1000) with 40 exponentials in a matrix
 mat <- matrix(data, nosim, nsam)
 
 # calculate the sample means
@@ -46,6 +50,10 @@ data.mean <- apply(mat, 1, mean)
 
 ```
 
+
+### III. ANALYSIS
+
+1. Show the sample mean and compare it to the theoretical mean of the distribution.
 
 CLT(Central Limit Theorem) tells us that the sample mean is normally distributed with mean equal to the original mean it is trying to estimate and the standard deviation equal to the true variance divided by the number of observations.
 
