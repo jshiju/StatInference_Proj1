@@ -3,6 +3,7 @@ title: "Statistical Inference - Simulation Exercise"
 author: "jshiju"
 date: "Saturday, July 25, 2015"
 output: pdf_document
+keep_md: true
 ---
 
 ### I. OVERVIEW
